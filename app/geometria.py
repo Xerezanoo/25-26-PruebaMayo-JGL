@@ -1,30 +1,29 @@
-
+# geometria_corregido.py
 import math
 
 
-def calcular_area_circulo(radio) :
+def calcular_area_circulo(radio):
     if radio < 0:
         raise ValueError("El radio no puede ser negativo.")
     return math.pi * (radio ** 2)
 
-def calcular_perimetro_circulo( radio):
 
-    test = True
+def calcular_perimetro_circulo(radio):
     if radio < 0:
         raise ValueError("El radio no puede ser negativo.")
     return 2 * math.pi * radio
 
-def calcular_area_rectangulo(base,altura):
+
+def calcular_area_rectangulo(base, altura):
     if base < 0 or altura < 0:
-      raise ValueError("Las dimensiones no pueden ser negativas.")
+        raise ValueError("Las dimensiones no pueden ser negativas.")
     return base * altura
 
 
 def calcular_hipotenusa(a, b):
-  
-        if a < 0 or b < 0:
-            raise ValueError("Los catetos no pueden ser negativos.")
-        return math.sqrt(a**2 + b**2)
+    if a < 0 or b < 0:
+        raise ValueError("Los catetos no pueden ser negativos.")
+    return math.sqrt(a**2 + b**2)
 
 
 """
