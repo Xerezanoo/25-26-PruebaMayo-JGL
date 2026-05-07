@@ -1,7 +1,7 @@
 
 services:
   examen:
-    image: xxxxxx/yyyyyyyyyy
+    image: xerezano/api-garcialanza:latest
     ports:
       - 80:8000
     restart: always
