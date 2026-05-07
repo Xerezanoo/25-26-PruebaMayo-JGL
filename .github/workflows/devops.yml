@@ -56,6 +56,30 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         port: 22  # ${{ secrets.PORT }}
         script: |
-            sleep 30
+            sleep 60
             docker compose down --rmi all
             docker compose up -d
+
+  # Añadir Linting
+  flake8-lint:
+    name: Lint with flake8
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+
+  # Añadir escaneo GitLeaks
+  #gitleaks-scan:
+  #  name: gitleaks
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #      with:
+  #        fetch-depth: 0
+  #    - uses: gitleaks/gitleaks-action@v2
